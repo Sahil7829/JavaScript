@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 400px;
+        width: 500px;
+        text-align: center;
+        background-color:lightblue;
+        margin: 500px;
+        border-radius: 10px;
+        margin-top: 200px;
+        justify-items: auto;
+
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+        height: 30px;
+    }
+
+</style>
+<body>
+    <script>
+        
+        function add(){
+            let a=parseInt(document.getElementById("number1").value);
+            let b=parseInt(document.getElementById("number2").value);
+        
+
+            document.getElementById("spanans").innerHTML=a+b;
+
+                
+           }
+                
+
+        function sub(){
+            let a=parseInt(document.getElementById("number1").value);
+            let b=parseInt(document.getElementById("number2").value);
+        
+            
+            document.getElementById("spanans").innerHTML=a-b;
+
+        }    
+        
+        function mul(){
+            let a=parseInt(document.getElementById("number1").value);
+            let b=parseInt(document.getElementById("number2").value);
+        
+            
+            document.getElementById("spanans").innerHTML=a*b;
+
+        }    
+
+        function div(){
+            let a=parseInt(document.getElementById("number1").value);
+            let b=parseInt(document.getElementById("number2").value);
+        
+            
+            document.getElementById("spanans").innerHTML=a/b;
+
+        }    
+                 
+
+    </script>
+    <form class="container ">
+        <input type="text" placeholder="Enter number1"  class="container1" id="number1">
+        <br>
+
+        <input type="text" placeholder="Enter number2"  class="container1" id="number2">
+        <br>
+
+     <input type="radio" value="Additionn" name="n"  class="container1" id="btnsubmit" onclick="add();">
+     <label for="add">Additionn</label>
+
+     <input type="radio" value="Substraction" name="n"  class="container1" id="btnsubmit" onclick="sub();">
+     <label for="sub">Substraction</label>
+
+     <input type="radio" value="Multiplication" name="n"  class="container1" id="btnsubmit" onclick="mul();">
+     <label for="mul">Multiplication</label>
+
+     <input type="radio" value="Division" name="n"  class="container1" id="btnsubmit" onclick="div();">
+     <label for="div">Division</label>
+
+     <span id="spanans"></span>
+    
+     
+    </form>
+    
+</body>
+</html>

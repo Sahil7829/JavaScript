@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CARDS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .cardgame,
+    .cardgame1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cardgame img,
+    .cardgame1 img {
+      width: 120px; /* Adjust width to fit 5 images per row */
+      height: auto; /* Maintain aspect ratio */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .cardgame img:hover,
+    .cardgame1 img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+  <body>
+    <form>
+      <div class="cardgame">
+        <img src="images/carda.jpeg" id="img1" class="all" />
+        <img src="images/card2.jpeg" id="img2" class="all" />
+        <img src="images/card3.jpeg" id="img3" class="all" />
+        <img src="images/card4.jpeg" id="img4" class="all" />
+        <img src="images/cardj.jpeg" id="img5" class="all" />
+      </div>  
+      <div class="cardgame1">
+        
+        <img src="images/cardq.jpeg" id="img7" class="all" />
+        <img src="images/cardk.jpeg" id="img8" class="all" />
+      
+      </div>
+
+      <input
+        type="button"
+        value="RESET"
+        onclick="Generate()"
+        class="w-[200px] h-[50px] m-2 bg-green-400 hover:bg-gray-200 border border-4 border-solid border-black text-3xl"
+        id="reset"
+      />
+
+     
+    </form>
+  </body>
+
+
+
+<script>
+
+    
+    function Generate() {
+      // Array of image sources
+      let images = ["images/carda.jpeg","images/card2.jpeg","images/card3.jpeg","images/card4.jpeg",
+                "images/cardj.jpeg","images/cardq.jpeg","images/cardr.jpeg",
+                "images/cardk.jpeg"];
+
+      // Shuffle the images array
+      images.sort(() => Math.random() - 0.5);
+
+      // Select all images
+      let cardImages = document.querySelectorAll('.all');
+
+      // Assign shuffled image sources to each image element
+      cardImages.forEach((img, index) => {
+        img.src = images[index];
+      });
+    }
+
+    // Initial call to display cards when the page loads
+    Generate();
+ 
+</script>

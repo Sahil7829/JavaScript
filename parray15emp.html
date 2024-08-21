@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+</head>
+<body>
+    <table border="1" id="userTable">
+        <thead>
+            <tr>
+                <th>Employee Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here by JavaScript -->
+        </tbody>
+    </table><br>
+
+    <input type="text" placeholder="Enter Employee Number" id="txt">
+    <button onclick="displayEmployeeDetails()">Submit</button>
+    <span id="span1"></span>
+
+<script>
+    const users = [
+        { eno: "1", firstName: "Aarav", lastName: "Sharma", salary: 10000, department: "Engineering", gender: "Male" },
+        { eno: "2", firstName: "Vihaan", lastName: "Patel", salary: 12000, department: "Marketing", gender: "Male" },
+        { eno: "3", firstName: "Vivaan", lastName: "Reddy", salary: 45000, department: "Human Resources", gender: "Male" },
+        { eno: "4", firstName: "Ananya", lastName: "Iyer", salary: 52000, department: "Finance", gender: "Female" },
+        { eno: "5", firstName: "Diya", lastName: "Khan", salary: 15000, department: "Engineering", gender: "Female" },
+        // Add more employees as necessary...
+    ];
+
+    const tableBody = document.querySelector("#userTable tbody");
+
+    function displayEmployeeDetails() {
+        let inputNo = document.getElementById("txt").value;
+        tableBody.innerHTML = "";  // Clear previous data
+        let employee = users.find(user =  user.eno === inputNo );
+
+        if (employee) {
+            tableBody.innerHTML = `
+                <tr>
+                    <td>${employee.eno}</td>
+                    <td>${employee.firstName}</td>
+                    <td>${employee.lastName}</td>
+                    <td>${employee.salary}</td>
+                    <td>${employee.department}</td>
+                    <td>${employee.gender}</td>
+                </tr>
+            `;
+            // document.getElementById("span1").innerText = "";
+        } else {
+            document.getElementById("span1").innerText = "No employee found with that Number.";
+        }
+    }
+
+    // Initially show all employees
+    users.forEach(user => {
+        const row = `<tr>
+            <td>${user.eno}</td>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.salary}</td>
+            <td>${user.department}</td>
+            <td>${user.gender}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+    });
+</script>
+</body>
+</html>

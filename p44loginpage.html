@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Login Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .login-form h2 {
+        margin-bottom: 20px;
+      }
+      .login-form input {
+        width: 50%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .login-form button {
+        width: 50%;
+        padding: 10px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .login-form button:disabled {
+        background-color: #ccc;
+      }
+      .error {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-form">
+      <h2>VALIDATION FORM</h2>
+      <input type="text" id="username" placeholder="username" />
+      <span id="span1"></span>
+      <input type="password" id="password" placeholder="Password" />
+      <span id="span2"></span>
+      <input
+        type="password"
+        id="retype-password"
+        placeholder="Retype Password"
+      />
+      <span id="span3"></span>
+      <br />
+      <select id="options" name="options">
+        <option id="select" value="option1">Select</option>
+        <option value="option2">Male</option>
+        <option value="option3">Female</option>
+        <span id="span4"></span>
+      </select>
+      <br />
+
+      <input id="cricket" type="checkbox" name="option1" value="option1" />
+      Cricket
+
+      <label>
+        <input id="skating" type="checkbox" name="option2" value="option2" />
+        skating
+      </label>
+      <label>
+        <input id="vollyball" type="checkbox" name="option3" value="option3" />
+        vollyball
+      </label>
+      <label>
+        <input id="racing" type="checkbox" name="option4" value="option4" />
+        Racing
+      </label>
+      <span id="span5"></span>
+      <input type="textarea" id="txtarea" placeholder="Enter Text" />
+      <span id="span7"></span>
+
+      <br /><input type="button" id="btn2" value="refresh captch">🔄
+
+      <br />
+      <span id="spancaptcha"></span><br />
+      <input type="text" id="txtcheck" placeholder="Enter captcha" />
+      <span id="span8"></span>
+      <input type="submit" id="submit-btn" />
+      <!-- <button id="submit-btn">Submit</button> -->
+    </div>
+  </body>
+
+  <script>
+    let uid = document.querySelector("#username");
+    let pid = document.querySelector("#password");
+    let rpid = document.querySelector("#retype-password");
+    let span1 = document.querySelector("#span1");
+    let span2 = document.querySelector("#span2");
+    let span3 = document.querySelector("#span3");
+    let span4 = document.querySelector("#span4");
+    let span5 = document.querySelector("#span5");
+    let spancaptcha = document.querySelector("#spancaptcha");
+    let txtcheck = document.querySelector("#txtcheck");
+    let span7 = document.querySelector("#span7");
+    let span8 = document.querySelector("#span8");
+    let options = document.querySelector("#options");
+    let select = document.querySelector("#select");
+    let ch1 = document.querySelector("#cricket");
+    let ch2 = document.querySelector("#skating");
+    let ch3 = document.querySelector("#vollyball");
+    let ch4 = document.querySelector("#racing");
+    let txtarea = document.querySelector("#txtarea");
+    let btnsave = document.querySelector("#submit-btn");
+    let btn2=document.querySelector("#btn2");
+
+
+    const character="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+      
+      let result = " ";
+      for (let i = 0; i < 5; i++) {
+        result += character.charAt(Math.floor(Math.random() * character.length));
+      }
+      //alert(result);
+      spancaptcha.innerHTML = result;
+
+      if (input === you) {
+      span8.innerHTML='CAPTCHA validated!';
+    } else {
+      span8.innerHTML='Invalid CAPTCHA. Please try again.';
+      
+    }
+
+     
+
+    btnsave.addEventListener("click", () => {
+      let a = uid.value;
+      let b = pid.value;
+      let c = rpid.value;
+      let op = options.value;
+      let s = select.value;
+      let area = txtarea.value.length;
+      let x = 0;
+      let input=txtcheck.value;
+      let you=spancaptcha.innerText;
+
+      if (a == "") {
+        span1.innerHTML = "*";
+      } else {
+        span1.innerHTML = "";
+      }
+
+      if (b == "") {
+        span2.innerHTML = "*";
+      } else {
+        span2.innerHTML = "";
+      }
+
+      if (c == "") {
+        span3.innerHTML = "*";
+      } else {
+        span3.innerHTML = "";
+      }
+
+      if (b !== c) {
+        span3.innerHTML = "<br> Incorrect Password";
+      } else {
+        span3.innerHTML = "";
+      }
+
+      if (op == s) {
+        span3.innerHTML = "Not selected";
+      } else {
+        span3.innerHTML = "";
+      }
+
+      if (ch1.checked) {
+        x = 1;
+      } else {
+        span5.innerHTML = "Mandatory";
+      }
+
+      if (ch2.checked) {
+        x = 1;
+      } else {
+        span5.innerHTML = "Mandatory";
+      }
+
+      if (ch3.checked) {
+        x = 1;
+      } else {
+        span5.innerHTML = "Mandatory";
+      }
+
+      if (ch4.checked) {
+        x = 1;
+      } else {
+        span5.innerHTML = "Mandatory";
+      }
+
+      if (x === 1) {
+        span5.innerHTML = "";
+      }
+
+      if (area < 10) {
+        span7.innerHTML = "Enter max 10 letters";
+      } else {
+        span7.innerHTML = "";
+      }
+
+      
+
+    //  alert(input.length);
+     // alert(you.length);
+    if (input === you) {
+      span8.innerHTML='CAPTCHA validated!';
+    } else {
+      span8.innerHTML='Invalid CAPTCHA. Please try again.';
+      
+    }
+
+    })
+
+    btn2.addEventListener("click",()=>{
+      
+      const character="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+      let result = " ";
+      for (let i = 0; i < 5; i++) {
+        result += character.charAt(Math.floor(Math.random() * character.length));
+      }
+      //alert(result);
+      spancaptcha.innerHTML = result;
+
+      if (input === you) {
+      span8.innerHTML='CAPTCHA validated!';
+    } else {
+      span8.innerHTML='Invalid CAPTCHA. Please try again.';
+      
+    }
+    })
+
+
+
+  </script>
+</html>

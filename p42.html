@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      width: 50%;
+      max-width: 200px;
+      background: rgb(0, 0, 0);
+      padding: 20px;
+      margin: 0 28px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px rgb(0, 0, 0);
+      margin-top: 100px;
+      margin-left: 350px;
+      box-shadow: 10px 10px 10px #57669a, -10px -10px 20px #ffffff;
+    }
+    .user-input-box input {
+      height: 40px;
+      width: 30%;
+      border-radius: 7px;
+      outline: none;
+      border: 1px solid grey;
+      padding: 0 10px;
+      margin: 3px;
+    }
+
+    .user-input-box {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: 30px;
+      justify-content: center;
+    }
+
+    .txt {
+      margin-left: 100px;
+    }
+
+    .form-title {
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+      padding-bottom: 6px;
+      color: white;
+      text-shadow: 2px 2px 2px black;
+      border-bottom: solid 1px white;
+    }
+  </style>
+  <body>
+    <form>
+      <div class="container">
+        <h1 class="form-title">TICTACTOE</h1>
+        <div class="user-input-box">
+          <input type="button" id="btn1" />
+          <input type="button" id="btn2" />
+          <input type="button" id="btn3" />
+          <input type="button" id="btn4" />
+          <input type="button" id="btn5" />
+          <input type="button" id="btn6" />
+          <input type="button" id="btn7" />
+          <input type="button" id="btn8" />
+          <input type="button" id="btn9" />
+        </div>
+      </div>
+    </form>
+    
+    <script>
+      let btnno1 = document.querySelector("#btn1");
+      let btnno2 = document.querySelector("#btn2");
+      let btnno3 = document.querySelector("#btn3");
+      let btnno4 = document.querySelector("#btn4");
+      let btnno5 = document.querySelector("#btn5");
+      let btnno6 = document.querySelector("#btn6");
+      let btnno7 = document.querySelector("#btn7");
+      let btnno8 = document.querySelector("#btn8");
+      let btnno9 = document.querySelector("#btn9");
+      let c = 1;
+
+      btnno1.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno1.value = "X";
+        } else {
+          btnno1.value = "O";
+        }
+
+        c++;
+      });
+
+      btnno2.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno2.value = "X";
+        } else {
+          btnno2.value = "O";
+        }
+        c++;
+      });
+
+      btnno3.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno3.value = "X";
+        } else {
+          btnno3.value = "O";
+        }
+        c++;
+      });
+
+      btnno4.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno4.value = "X";
+        } else {
+          btnno4.value = "O";
+        }
+        c++;
+      });
+
+      btnno5.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno5.value = "X";
+        } else {
+          btnno5.value = "O";
+        }
+        c++;
+      });
+
+      btnno6.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno6.value = "X";
+        } else {
+          btnno6.value = "O";
+        }
+        c++;
+      });
+
+      btnno7.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno7.value = "X";
+        } else {
+          btnno7.value = "O";
+        }
+        c++;
+      });
+
+      btnno8.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno8.value = "X";
+        } else {
+          btnno8.value = "O";
+        }
+        c++;
+      });
+
+      btnno9.addEventListener("click", () => {
+        if (c % 2 == 0) {
+          btnno9.value = "X";
+        } else {
+          btnno9.value = "O";
+        }
+        c++;
+      });
+    </script>
+  </body>
+</html>

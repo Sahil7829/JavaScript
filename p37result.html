@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        Hindi Marks<input type="text" id="hindi" /><br><br>
+        English Marks<input type="text" id="english" /><br><br>
+        Maths Marks<input type="text" id="maths" /><br><br>
+        <br><input type="button" id="pn" value="clickMe">
+        <br><span id="spanans"></span>
+        <span id="spantotal"></span>
+        
+    </form>
+     
+    <script>
+        let hindi = document.querySelector("#hindi");
+        let english = document.querySelector("#english");
+        let maths = document.querySelector("#maths");
+        let span = document.querySelector("#spanans");
+        let spantotal=document.querySelector("#spantotal")
+        let btn=document.querySelector("#pn");
+    
+
+        btn.addEventListener("click", ()=>{
+            let a = parseFloat(hindi.value);
+            let b=parseFloat(english.value);
+            let c=parseFloat(maths.value);
+            let total=a+b+c;
+ 
+            spantotal.innerHTML=total;
+
+            if(total>90){
+                
+                span.innerHTML="A Grade";
+            }
+            else if(total>60 && total<90){
+                span.innerHTML="B Grade";
+            }
+            else if(total>30 && total<10 ){
+                span.innerHTML="C Grade";
+            }
+            else{
+                span.innerHTML="You Are Fail";
+            }
+            
+           
+
+        })
+        
+    </script>
+</body>
+
+</html>

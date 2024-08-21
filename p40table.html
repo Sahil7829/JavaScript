@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOP</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="number"/>
+        <span id="spanans"></span>
+        <input type="button" id="btn" value="click me">
+    </form>
+
+    <script>
+        let no1=document.querySelector("#number");
+        let span=document.querySelector("#spanans");
+        let button=document.querySelector("#btn");
+
+        button.addEventListener("click",()=>{
+
+            let n=parseInt(no1.value);
+            let b="";
+            for(i=1;i<=10;i++){
+            
+                b+= "<br>"+n+"X"+i+"=" + i*n;
+                span.innerHTML=b;
+            }
+        })
+    </script>
+    
+</body>
+</html>

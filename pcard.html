@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CARDS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .cardgame,
+    .cardgame1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cardgame img,
+    .cardgame1 img {
+      width: 120px; /* Adjust width to fit 5 images per row */
+      height: auto; /* Maintain aspect ratio */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .cardgame img:hover,
+    .cardgame1 img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
+  <body>
+    <form>
+      <div class="cardgame">
+        <img src="images/cardshow1.jpeg" id="img1" class="all" />
+        <img src="images/cardshow2.jpeg" id="img2" class="all" />
+        <img src="images/cardshow3.jpeg" id="img3" class="all" />
+        <img src="images/cardshow4.jpeg" id="img4" class="all" />
+        <img src="images/cardshow5.jpeg" id="img5" class="all" />
+      </div>  
+      <div class="cardgame1">
+        <img src="images/cardshow1.jpeg" id="img6" class="all" />
+        <img src="images/cardshow2.jpeg" id="img7" class="all" />
+        <img src="images/cardshow3.jpeg" id="img8" class="all" />
+        <img src="images/cardshow4.jpeg" id="img9" class="all" />
+        <img src="images/cardshow5.jpeg" id="img10" class="all" />
+      </div>
+
+      <input
+        type="button"
+        value="RESET"
+        onclick="reeset()"
+        class="w-[200px] h-[50px] m-2 bg-green-400 hover:bg-gray-200 border border-4 border-solid border-black text-3xl"
+        id="reset"
+      />
+
+      <input
+        type="button"
+        value="Match"
+        onclick="match()"
+        class="w-[200px] h-[50px] m-2 bg-green-400 hover:bg-gray-200 border border-4 border-solid border-black text-3xl"
+      />
+
+      <input
+        type="button"
+        value="Undo"
+        onclick="undo()"
+        class="w-[200px] h-[50px] m-2 bg-red-400 hover:bg-gray-200 border border-4 border-solid border-black text-3xl"
+      />
+    </form>
+  </body>
+
+  <script>
+    let card1 = document.querySelector("#img1");
+    let card2 = document.querySelector("#img2");
+    let card3 = document.querySelector("#img3");
+    let card4 = document.querySelector("#img4");
+    let card5 = document.querySelector("#img5");
+    let card6 = document.querySelector("#img6");
+    let card7 = document.querySelector("#img7");
+    let card8 = document.querySelector("#img8");
+    let card9 = document.querySelector("#img9");
+    let card10 = document.querySelector("#img10");
+
+    let a1 = 0;
+    let a2 = 0;
+    let b1 = 0;
+    let b2 = 0;
+    let m1 = 0;
+    let m2 = 0;
+    let d1 = 0;
+    let d2 = 0;
+    let e1 = 0;
+    let e2 = 0;
+
+    let lastFlippedCard = null;
+
+    card1.addEventListener("click", () => {
+      card1.src = "images/card2.jpeg";
+      a1 = 1;
+    
+      lastFlippedCard = card1;
+    });
+
+    card2.addEventListener("click", () => {
+      card2.src = "images/card3.jpeg";
+      a2 = 1;
+
+      lastFlippedCard = card2;
+    });
+
+    card3.addEventListener("click", () => {
+      card3.src = "images/carda.jpeg";
+      b1 = 1;
+      
+      lastFlippedCard = card3;
+    });
+
+    card4.addEventListener("click", () => {
+      card4.src = "images/cardj.jpeg";
+      m1 = 1;
+    
+      lastFlippedCard = card4;
+    });
+
+    card5.addEventListener("click", () => {
+      card5.src = "images/carda.jpeg";
+      b2 = 1;
+      
+      lastFlippedCard = card5;
+    });
+
+    card6.addEventListener("click", () => {
+      card6.src = "images/cardj.jpeg";
+      m2 = 1;
+      
+      lastFlippedCard = card6;
+    });
+
+    card7.addEventListener("click", () => {
+      card7.src = "images/cardq.jpeg";
+      d1 = 1;
+      
+      lastFlippedCard = card7;
+    });
+
+    card8.addEventListener("click", () => {
+      card8.src = "images/cardk.jpeg";
+      e1 = 1;
+    
+      lastFlippedCard = card8;
+    });
+
+    card9.addEventListener("click", () => {
+      card9.src = "images/cardq.jpeg";
+      d2 = 1;
+      
+      lastFlippedCard = card9;
+    });
+
+    card10.addEventListener("click", () => {
+      card10.src = "images/cardk.jpeg";
+      e2 = 1;
+     
+      lastFlippedCard = card10;
+    });
+
+    function resetOtherCards() {
+      a1 = 0;
+      a2 = 0;
+      b1 = 0;
+      b2 = 0;
+      m1 = 0;
+      m2 = 0;
+      d1 = 0;
+      d2 = 0;
+      e1 = 0;
+      e2 = 0;
+    }
+
+    function reeset() {
+      let x = document.querySelectorAll(".all");
+      for (let i = 0; i < x.length; i++) {
+        x[i].src = "images/cardshow1.jpeg";
+        x[i].style.display = "block";
+      }
+     
+    }
+
+    function match() {
+        
+         //alert(a1 + " == " + a2);
+        // alert(b1 + " == " + b2);
+
+      if (a1 == a2 && a1 == 1) {
+        card1.style.display = "block";
+        card2.style.display = "block";
+        a1 = 0;
+        a2 = 0;
+      }
+
+      if (b1 == b2 && b1 == 1) {
+        card3.style.display = "none";
+        card5.style.display = "none";
+        b1 = 0;
+        b2 = 0;
+      }
+
+      if (m1 == m2 && m1 == 1) {
+        card4.style.display = "none";
+        card6.style.display = "none";
+        m1 = 0;
+        m2 = 0;
+      }
+
+      if (d1 == d2 && d1 == 1) {
+        card7.style.display = "none";
+        card9.style.display = "none";
+        d1 = 0;
+        d2 = 0;
+      }
+
+      if (e1 == e2 && e1 == 1) {
+        card8.style.display = "none";
+        card10.style.display = "none";
+        e1 = 0;
+        e2 = 0;
+      }
+    }
+
+    function undo() {
+
+        let y=document.querySelectorAll(".all");
+        for(let i =0;i<y.length;i++){
+            if(lastFlippedCard){
+                y[i].src="images/cardshow1.jpeg";
+            
+            }
+            
+        }
+        resetOtherCards();
+        lastFlippedCard=null;
+         
+    }
+  </script>
+</html>

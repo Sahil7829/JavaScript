@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        Number1<input type="text" id="txtno" /><br><br>
+        <br><input type="button" id="pn" value="clickMe">
+        <br><span id="spanans"></span>
+    </form>
+     
+    <script>
+        let txtno1 = document.querySelector("#txtno");
+        let span = document.querySelector("#spanans");
+        let no=document.querySelector("#pn");
+
+        no.addEventListener("click", ()=>{
+            let a = parseFloat(txtno.value);
+            
+            if(a>0){
+                span.innerHTML="Number Is Positive";
+            }
+            else  if(a<0){
+                span.innerHTML="Number Is Negative";
+            }
+            else{
+                span.innerHTML="Number Is Zero";
+            }
+
+
+        })
+        
+    </script>
+</body>
+
+</html>

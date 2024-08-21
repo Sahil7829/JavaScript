@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let animals =['dog','cat','donkey']
+
+    //  animals.push();     
+     animals.pop();
+    //  animals.shift()
+    //  animals.unshift('');
+
+
+
+document.writeln(animals);
+
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let animals = ['dog', 'cat', 'donkey'];
+
+        let index = animals.indexOf('donkey'); // Find the index of 'cat'
+        // if (index !== -1) {
+        //     animals.splice(index, 1); // Remove 'cat' from the array
+        // }
+        animals.splice(index, 2);
+        document.writeln(animals); // This will display 'dog,donkey'
+
+    </script>
+</body>
+</html>

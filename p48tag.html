@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>hi</p>
+    <p>hii</p>
+    <p>hiii</p>
+    <p>hiiii</p>
+    <p>hiiiii</p>
+    <input type="button" value="qselectorall" onclick="qselectorAll()" />
+    <script>
+
+      function qselectorAll() {
+        let x = document.getElementsByTagName('p');
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.color = "#FF0000";
+        }
+      }
+    </script>
+  </body>
+</html>

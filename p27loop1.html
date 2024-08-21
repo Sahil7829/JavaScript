@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 150px;
+        width: 400px;
+        text-align: center;
+        background-color:lightblue;
+        margin: 500px;
+        border-radius: 10px;
+        margin-top: 200px;
+        justify-items: auto;
+
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+        height: 30px;
+    }
+
+</style>
+<body>
+    <script>
+        function loop(){
+            let n=parseInt(document.getElementById("number").value);
+            let a="";
+
+           
+            for(i=1;i<=n;i++){
+
+                a+="<br>"+i;
+
+                
+            }
+            document.getElementById("spanans").innerHTML=a;
+        }
+
+    </script>
+    <form class="container ">
+        <input type="text" placeholder="Enter number"  class="container1" id="number">
+        <br>
+        
+     <input type="button" value="click me"  class="container1" id="btnsubmit" onclick="loop();">
+
+     <span id="spanans"></span>
+    </form>
+    
+</body>
+</html>

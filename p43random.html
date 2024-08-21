@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    
+        <input type="button" id="btnans" value="Click  me"><br><br>
+        <span id="spanans1"></span>
+        <span id="spanans2"></span>
+        <input type="text" placeholder="Write Answer" id="addition"><br><br>
+        <span id="span3"></span><br>
+        <span id="span4"></span><br><br>
+
+        <span id="span5"></span><br><br>
+        <input type="button" id="btnans2" value="Click">
+    </form>
+
+    <script>
+         let r=0;
+         let w=0;
+        let button=document.querySelector("#btnans");
+        let span1=document.querySelector("#spanans1");
+        let span2=document.querySelector("#spanans2")
+        let userans=document.querySelector("#addition");
+        let span3=document.querySelector("#span3");
+        let button2=document.querySelector("#btnans2");
+        let span4=document.querySelector("#span4");
+        let span5=document.querySelector("#span5");
+
+        button.addEventListener("click",()=>{
+
+            let a=Math.round((Math.random())*50);
+            let b=Math.round((Math.random())*50);
+
+            span1.innerHTML=a;
+            span2.innerHTML=b;
+            document.getElementById("addition").disabled = false;
+        
+        })
+    
+
+        button2.addEventListener("click",()=>{
+
+           
+        
+            let c = parseInt(span1.innerHTML);
+            let d = parseInt(span2.innerHTML);
+            let userans=parseInt(addition.value);
+
+            if(c+d===userans){
+                
+                span3.innerHTML="answer is right";
+                r++;
+                span4.innerHTML="right"+r;
+            
+                
+            }
+            else{
+                span3.innerHTML="answer is wrong";
+                w++;
+                span5.innerHTML="wrong"+w;
+                
+            }
+            
+        
+            document.getElementById("addition").disabled = true;
+
+
+            
+
+
+        })
+    </script>
+</body>
+</html>

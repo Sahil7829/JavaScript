@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .cardgame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .cardgame img {
+        width: 200px; /* Adjust width to fit 5 images per row */
+        height: auto; /* Maintain aspect ratio */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .cardgame img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .cardgame img:active {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .cardgame .buttons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .cardgame .buttons input {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease;
+      }
+
+      .cardgame .buttons input:hover {
+        background-color: #0056b3;
+      }
+
+      .cardgame .buttons input:active {
+        background-color: #004494;
+      }
+
+      /* Ensure only one image is visible initially */
+      #img1 {
+        display: block;
+      }
+      #img2,
+      #img3,
+      #img4 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="cardgame">
+        <img src="images/gujrat.jpeg" id="img1" class="all" />
+        <img src="images/jk.jpeg" id="img2" class="all" />
+        <img src="images/tamil.jpeg" id="img3" class="all" />
+        <img src="images/mp.jpeg" id="img4" class="all" />
+
+        <div class="buttons">
+          <input
+            type="button"
+            id="btn1"
+            value="Gujarat"
+            onclick="checkImage('img1', 'Gujarat')"
+          />
+          <input
+            type="button"
+            id="btn2"
+            value="Jammu & Kashmir"
+            onclick="checkImage('img2', 'Jammu & Kashmir')"
+          />
+          <input
+            type="button"
+            id="btn3"
+            value="Tamil Nadu"
+            onclick="checkImage('img3', 'Tamil Nadu')"
+          />
+          <input
+            type="button"
+            id="btn4"
+            value="Madhya Pradesh"
+            onclick="checkImage('img4', 'Madhya Pradesh')"
+          />
+        </div>
+      </div>
+    </form>
+
+    <script>
+      let currentImageIndex = 0;
+      const images = ["img1", "img2", "img3", "img4"];
+      let correctAnswers = { img1: "Gujarat",img2: "Jammu & Kashmir",img3: "Tamil Nadu",
+        img4: "Madhya Pradesh",
+      };
+
+      function checkImage(imgId, answer) {
+        let currentImageId = images[currentImageIndex];
+        if (imgId === currentImageId && correctAnswers[imgId] === answer) {
+          alert("Answer right!");
+        } else {
+          alert("Answer wrong!");
+        }
+        showNextImage();
+      }
+
+      function showNextImage() {
+        let currentImageId = images[currentImageIndex];
+        document.getElementById(currentImageId).style.display = "none";
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        let nextImageId = images[currentImageIndex];
+        document.getElementById(nextImageId).style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+    
+</head>
+<style>
+     /* Ensure only one image is visible initially */
+     #img1 { display: block; }
+     #img2, #img3 { display: none; }
+ </style>
+<body class="container">
+     <div>
+     <img src="red.jpg" id="img1" />
+     <img src="yellow.jpg" id="img2"/>
+     <img src="green.jpg" id="img3"/>
+</div>
+</body>
+<script>
+     
+        function changeBackgroundColor() {
+          let red =document.getElementById("img1");
+          let yellow =document.getElementById("img2");
+          let green =document.getElementById("img3");
+
+          if(red.style.display=="block"){
+               red.style.display="none";
+               yellow.style.display="block";
+
+          }
+          else if(yellow.style.display=="block")
+          {
+               yellow.style.display="none";
+               green.style.display="block";
+          }
+          else{
+               green.style.display="none";
+               red.style.display="block";
+          }
+          
+         
+        }setInterval(changeBackgroundColor,2000)
+        
+
+</script>
+</html>                       

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let users = [
+      { eno: "1", firstName: "Aarav", lastName: "Sharma", salary: 10000, department: "Engineering" },
+      { eno: "2", firstName: "Vihaan", lastName: "Patel", salary: 12000, department: "Marketing" },
+      { eno: "3", firstName: "Vivaan", lastName: "Reddy", salary: 45000, department: "Human Resources" },
+      { eno: "4", firstName: "Ananya", lastName: "Iyer", salary: 52000, department: "Finance" },
+      { eno: "5", firstName: "Diya", lastName: "Khan", salary: 15000, department: "Engineering" },
+      { eno: "6", firstName: "Krishna", lastName: "Gupta", salary: 51000, department: "Sales" },
+      { eno: "7", firstName: "Arjun", lastName: "Mehta", salary: 18000, department: "Marketing" },
+      { eno: "8", firstName: "Aanya", lastName: "Nair", salary: 49000, department: "Engineering" },
+      { eno: "9", firstName: "Sara", lastName: "Shah", salary: 48000, department: "Human Resources" },
+      { eno: "10", firstName: "Rohan", lastName: "Malhotra", salary: 60000, department: "Finance" },
+      { eno: "11", firstName: "Ishaan", lastName: "Bose", salary: 45000, department: "Sales" },
+      { eno: "12", firstName: "Aryan", lastName: "Mishra", salary: 56000, department: "Marketing" },
+      { eno: "13", firstName: "Saanvi", lastName: "Joshi", salary: 52000, department: "Engineering" },
+      { eno: "14", firstName: "Aditya", lastName: "Ghosh", salary: 53000, department: "Human Resources" },
+      { eno: "15", firstName: "Aarohi", lastName: "Kapoor", salary: 55000, department: "Finance" },
+      { eno: "16", firstName: "Kavya", lastName: "Verma", salary: 47000, department: "Sales" },
+      { eno: "17", firstName: "Reyansh", lastName: "Bhatia", salary: 20000, department: "Marketing" },
+      { eno: "18", firstName: "Laksh", lastName: "Pillai", salary: 48000, department: "Engineering" },
+      { eno: "19", firstName: "Kabir", lastName: "Rana", salary: 17000, department: "Finance" },
+      { eno: "20", firstName: "Anika", lastName: "Singh", salary: 53000, department: "Human Resources" }
+    ];
+
+    // Example filter to find employees with a salary between 45000 and 55000
+    let filteredUsers = users.filter(user => user.salary >= 10000 && user.salary <= 20000);
+
+    // Display the filtered employees
+    filteredUsers.forEach(user => {
+        document.body.innerHTML += `Employee Number: ${user.eno}, FirstName: ${user.firstName}, LastName: ${user.lastName}, Salary: ${user.salary}, Department: ${user.department} <br>`;
+    });
+
+</script>
+</html>

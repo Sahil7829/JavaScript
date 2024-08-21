@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        height<input type="text" id="height" /><br><br>
+        base<input type="text" id="base" /><br>
+        <br><input type="button" id="triangle" value="Area Of triangle">
+        <br><span id="spanans"></span>
+    </form>
+     
+    <script>
+        let txtno1 = document.querySelector("#height");
+        let txtno2 = document.querySelector("#base");
+        let span = document.querySelector("#spanans");
+        let max=document.querySelector("#triangle");
+
+        max.addEventListener("click", ()=>{
+            let h = parseFloat(txtno1.value);
+            let b = parseFloat(txtno2.value);
+            let t=h*b*0.5;
+            
+           span.innerHTML=t;
+
+
+        })
+        
+    </script>
+</body>
+
+</html>

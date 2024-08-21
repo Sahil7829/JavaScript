@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <br />🔄
+    <br />
+    <span id="spancaptcha"></span><br />
+    <input type="text" id="txtcheck" placeholder="Enter captcha" />
+
+    <input type="submit" id="submit-btn"  />
+    <input type="submit" id="submit-btn2" value="refresh" />
+    <script>
+      let spancaptcha = document.querySelector("#spancaptcha");
+      let txtcheck = document.querySelector("#txtcheck");
+
+      let btnsave = document.querySelector("#submit-btn");
+      let btn2 = document.querySelector("#submit-btn2");
+
+      const character =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+      let characterlength = character.length;
+      let result = "";
+      for (let i = 0; i < 5; i++) {
+        result += character.charAt(Math.floor(Math.random() * characterlength));
+      }
+      // alert(result);
+      spancaptcha.innerHTML = result;
+
+      
+
+      btnsave.addEventListener("click", () => {
+        let input = txtcheck.value;
+        let you = spancaptcha.innerText;
+      //  alert(input.length);
+        //alert(you.length);
+        if (input === you) {
+          alert(  "CAPTCHA validated!");
+        } else {
+          alert("Invalid CAPTCHA. Please try again."); 
+        }
+      });
+
+      btn2.addEventListener("click", () => {
+        let input = txtcheck.value;
+        let you = spancaptcha.innerText;
+      //  alert(input.length);
+        //alert(you.length);
+        if (input === you) {
+          alert(  "CAPTCHA validated!");
+        } else {
+          alert("Invalid CAPTCHA. Please try again."); 
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

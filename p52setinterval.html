@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        let colors=["blue" , "red" , "black" , "skyblue" ,"yellow"]
+        let  c=0
+    function myCallbackFunction() {
+      document.body.style.backgroundColor=colors[c];
+      c= (c + 1) % colors.length;
+    }
+    
+    // Call the function every 1000 milliseconds (1 second)
+    setInterval(myCallbackFunction, 1000);
+    </script>
+</html>

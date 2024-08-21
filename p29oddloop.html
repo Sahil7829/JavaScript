@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        height: 400px;
+        width: 400px;
+        text-align: center;
+        background-color:lightblue;
+        margin: 500px;
+        border-radius: 10px;
+        margin-top: 200px;
+        justify-items: auto;
+
+        
+        
+    }
+    .container1{
+        margin-top: 20px;
+        height: 30px;
+    }
+
+</style>
+<body>
+    <script>
+        function odd(){
+            let n=parseInt(document.getElementById("number").value);
+            let a="";
+            let b="";
+
+           
+            for(i=1;i<=n;i++){
+                if(i%2==0){
+                   a+= "<br>Even="+i;
+                
+                }
+                
+                else{
+                    b+="odd="+i;
+                    }
+                
+                document.getElementById("spanans").innerHTML=a;
+                document.getElementById("spanans2").innerHTML=b;
+                 
+            }
+           
+        }
+
+    </script>
+    <form class="container ">
+        <input type="text" placeholder="Enter number"  class="container1" id="number">
+        <br>
+        
+     <input type="button" value="click me"  class="container1" id="btnsubmit" onclick="odd();">
+
+     <span id="spanans"></span>
+     <span id="spanans2"></span>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 1px solid black;
+        }
+        .header, .cell {
+            padding: 8px;
+            border: 1px solid black;
+            text-align: left;
+        }
+        .header {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">FirstName</div>
+        <div class="header">LastName</div>
+        <div class="header">Salary</div>
+        <div class="header">Department</div>
+        <!-- Cells will be added here by JavaScript -->
+    </div>
+</body>
+<script>
+// Array of users with Indian names
+let users = [
+  { firstName: "Aarav", lastName: "Sharma", salary: 50000, department: "Engineering" },
+  { firstName: "Vihaan", lastName: "Patel", salary: 55000, department: "Marketing" },
+  { firstName: "Vivaan", lastName: "Reddy", salary: 45000, department: "Human Resources" },
+  { firstName: "Ananya", lastName: "Iyer", salary: 52000, department: "Finance" },
+  { firstName: "Diya", lastName: "Khan", salary: 47000, department: "Engineering" },
+  { firstName: "Krishna", lastName: "Gupta", salary: 51000, department: "Sales" },
+  { firstName: "Arjun", lastName: "Mehta", salary: 53000, department: "Marketing" },
+  { firstName: "Aanya", lastName: "Nair", salary: 49000, department: "Engineering" },
+  { firstName: "Sara", lastName: "Shah", salary: 48000, department: "Human Resources" },
+  { firstName: "Rohan", lastName: "Malhotra", salary: 60000, department: "Finance" },
+  { firstName: "Ishaan", lastName: "Bose", salary: 45000, department: "Sales" },
+  { firstName: "Aryan", lastName: "Mishra", salary: 56000, department: "Marketing" },
+  { firstName: "Saanvi", lastName: "Joshi", salary: 52000, department: "Engineering" },
+  { firstName: "Aditya", lastName: "Ghosh", salary: 53000, department: "Human Resources" },
+  { firstName: "Aarohi", lastName: "Kapoor", salary: 55000, department: "Finance" },
+  { firstName: "Kavya", lastName: "Verma", salary: 47000, department: "Sales" },
+  { firstName: "Reyansh", lastName: "Bhatia", salary: 49000, department: "Marketing" },
+  { firstName: "Laksh", lastName: "Pillai", salary: 48000, department: "Engineering" },
+  { firstName: "Kabir", lastName: "Rana", salary: 50000, department: "Finance" },
+  { firstName: "Anika", lastName: "Singh", salary: 53000, department: "Human Resources" }
+];
+
+function displayUsers(users) {  
+  let container = document.querySelector('.container');
+  let cells = ''; // Initialize an empty string to hold the cells
+
+  users.map(user => {
+    cells += `
+      <div class="cell">${user.firstName}</div>
+      <div class="cell">${user.lastName}</div>
+      <div class="cell">${user.salary}</div>
+      <div class="cell">${user.department}</div>
+    `;
+  });
+
+  container.innerHTML += cells; // Append the cells to the container
+}
+
+// Call the function to display the user records
+displayUsers(users);
+
+</script>
+</html>

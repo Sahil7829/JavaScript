@@ -1,0 +1,175 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Q And Ans</title>
+</head>
+<body>
+
+<div>
+ <img class="mx-[29%] w-[45%] pt-8" src="images/gujrat.jpeg" id="img1" alt="Sachiv Ji">
+ <p class="ml-[29%] pt-6" id="question">1. What is the Name Of This Character In Panchayat Web Series?</p>
+ <div class="ml-[30%] pt-2">
+     <input type="radio" name="A" id="opt1" value="1"><span id="label1"> (A) GUJARAT</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt2" value="2"><span id="label2"> (B) MAHARASHTRA</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt3" value="3"><span id="label3"> (C) TAMIL NADU</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt4" value="4"><span id="label4"> (D) JAMMU&KASHMIR</span> &nbsp;&nbsp;
+ </div>
+ <input type="button" value="Submit" class="h-8 bg-green-600 rounded-2xl px-4 mx-[46%] mt-8 hover:bg-green-700 active:bg-green-600" onclick="btnsubmit()">
+</div>
+
+<script>
+
+let turn = 1;
+let count = 1;
+
+function btnsubmit() {
+    // Check which radio button is selected
+    // let selectedOption = document.querySelector('input[name="A"]:checked');
+
+   
+
+    // // Alert the selected radio button value
+    // alert("Selected Option: " + selectedOption.value);
+
+    if (turn === 1) {
+        document.getElementById('img1').src = "images/gujrat.jpeg";
+        document.getElementById('label1').textContent = " (A) GUJARAT";
+        document.getElementById('label2').textContent = " (B) UTTARAKHAND";
+        document.getElementById('label3').textContent = " (C) MADHYA PRADESH";
+        document.getElementById('label4').textContent = " (D) TAMIL NADU";
+        document.getElementById('question').textContent = "1. What is the Name Of This Map?";
+        alert(turn);
+        turn++; 
+        count++;
+    }
+    else if (turn == 2) {
+        document.getElementById('img1').src = "images/jk.jpeg";
+        document.getElementById('label1').textContent = " (A) ASSAM";
+        document.getElementById('label2').textContent = " (B) JAMMU&KASHMIR";
+        document.getElementById('label3').textContent = " (C) KERALA";
+        document.getElementById('label4').textContent = " (D) MEGHALAYA";
+        document.getElementById('question').textContent = "2. What is the Name Of This Map?";
+        alert(turn);
+        turn++;
+        count++;
+    }
+    else if (turn == 3) {
+        document.getElementById('img1').src = "images/tamil.jpeg";
+        document.getElementById('label1').textContent = " (A) UP";
+        document.getElementById('label2').textContent = " (B) KERALA";
+        document.getElementById('label3').textContent = " (C) TAMIL NADU";
+        document.getElementById('label4').textContent = " (D) GUJARAT";
+        document.getElementById('question').textContent = "3. What is the name of This Map?";
+        alert(turn);
+        turn++;
+        count++;
+    }
+    else if (turn == 4) {   
+        document.getElementById('img1').src = "images/mp.jpeg";
+        document.getElementById('label1').textContent = " (A) KERALA";
+        document.getElementById('label2').textContent = " (B) ASSAM";
+        document.getElementById('label3').textContent = " (C) GUJARAT";
+        document.getElementById('label4').textContent = " (D) MADHYA PRADESH";
+        document.getElementById('question').textContent = "4. What is the Name Of This Map?";
+        alert(turn);
+        turn++;
+        count++;
+    }
+}
+</script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Q And Ans</title>
+</head>
+<body onload="btnsubmit();">
+
+<div>
+ <img class="mx-[29%] w-[45%] pt-8" src="images/gujrat.jpeg" id="img1" alt="Sachiv Ji">
+ <p class="ml-[29%] pt-6" id="question">1. What is the Name Of This Character In Panchayat Web Series?</p>
+ <div class="ml-[30%] pt-2">
+     <input type="radio" name="A" id="opt1" value="1"><span id="label1"> (A) Prahlad cha</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt2" value="2"><span id="label2"> (B) Abhishek</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt3" value="3"><span id="label3"> (C) Bhusan Ji</span> &nbsp;&nbsp;
+     <input type="radio" name="A" id="opt4" value="4"><span id="label4"> (D) Binod</span> &nbsp;&nbsp;
+ </div>
+ <input type="button" value="Submit" class="h-8 bg-green-600 rounded-2xl px-4 mx-[46%] mt-8 hover:bg-green-700 active:bg-green-600" onclick="btnsubmit()">
+</div>
+
+<script>
+
+let turn = 1;
+let count = 1;
+
+function btnsubmit() {
+    // Check which radio button is selected
+    let selectedOption = document.querySelector('input[name="A"]:checked');
+    
+
+    if (turn === 1) {
+        document.getElementById('img1').src = "sachivji.jpg";
+        document.getElementById('label1').textContent = " (A) Prahlad cha";
+        document.getElementById('label2').textContent = " (B) Abhishek";
+        document.getElementById('label3').textContent = " (C) Bhusan Ji";
+        document.getElementById('label4').textContent = " (D) Binod";
+        document.getElementById('question').textContent = "1. What is the Name Of This Character In Panchayat Web Series?";
+        
+        turn++; 
+        count++;
+    }
+    else if (turn == 2) {
+        document.getElementById('img1').src = "prahlad cha.jpg";
+        document.getElementById('label1').textContent = " (A) Sachiv Ji";
+        document.getElementById('label2').textContent = " (B) Vikas";
+        document.getElementById('label3').textContent = " (C) Pradhan Ji";
+        document.getElementById('label4').textContent = " (D) Prahlad cha";
+        document.getElementById('question').textContent = "2. What is the Name Of This Character In Panchayat Web Series?";
+        turn++;
+        count++;
+    }
+    else if (turn == 3) {
+        document.getElementById('img1').src = "bhusan.avif";
+        document.getElementById('label1').textContent = " (A) Sachiv Ji";
+        document.getElementById('label2').textContent = " (B) Bhusan Ji";
+        document.getElementById('label3').textContent = " (C) Vikas";
+        document.getElementById('label4').textContent = " (D) Pradhan Ji";
+        document.getElementById('question').textContent = "3. Who is this character?";
+        turn++;
+        count++;
+    }
+    else if (turn == 4) {
+        document.getElementById('img1').src = "binod.jpg";
+        document.getElementById('label1').textContent = " (A) Binod";
+        document.getElementById('label2').textContent = " (B) Abhishek";
+        document.getElementById('label3').textContent = " (C) Prahlad cha";
+        document.getElementById('label4').textContent = " (D) Bhusan Ji";
+        document.getElementById('question').textContent = "4. What is the Name Of This Character?";
+        turn++;
+        count++;
+    }
+    uncheckAllRadioButtons();
+}
+
+function uncheckAllRadioButtons() {
+    let radioButtons = document.querySelectorAll('input[name="A"]');
+    radioButtons.forEach(radio => radio.checked = false);
+}
+
+
+</script>
+
+</body>
+</html> -->
+
+
